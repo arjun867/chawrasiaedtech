@@ -1,0 +1,7 @@
+{
+    "name": "project/edtechwebsite",
+    "description": "A description of your project",
+    "type": "project",
+    "license": "MIT", 
+    "require": {} 
+}
