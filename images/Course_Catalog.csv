@@ -1,0 +1,12 @@
+Category,Course Name,Duration,Price (USD),Modules,Hands-on Project,Mode
+Electric Vehicles (EV),EV Powertrain & Battery Systems,6 Weeks,$299,"Learn the fundamentals of electric vehicle powertrains including motors, battery technology, and power management systems.",EV Motor Control Simulation,Online
+Electric Vehicles (EV),EV Charging Infrastructure & Power Electronics,5 Weeks,$249,"Understand fast charging technologies, grid integration, and power electronics for modern EVs.",Design a Smart Charging Station,Online
+Electric Vehicles (EV),AI & IoT in Smart EVs,8 Weeks,$349,"Explore AI applications in electric vehicles, IoT sensors, and smart autonomous control systems.",Build an AI-based Vehicle Monitoring System,Online
+Electrical Engineering,Power System Analysis & Smart Grids,6 Weeks,$299,"Learn about power flow analysis, grid fault detection, and modern renewable energy integration.",Simulating a Smart Grid System,Online
+Electrical Engineering,PLC & SCADA for Industrial Automation,5 Weeks,$279,"Master PLC programming, SCADA systems, and industrial automation for factory control.",Design an Automated Industrial Control System,Online
+Mechanical Engineering,Finite Element Analysis (FEA) & Structural Simulation,7 Weeks,$329,"Understand FEA principles, structural simulation, and mechanical stress analysis using ANSYS.",Structural Load Analysis in ANSYS,Online
+Mechanical Engineering,Computational Fluid Dynamics (CFD) for Engineers,8 Weeks,$349,"Learn fluid dynamics, turbulence modeling, and CFD simulations for real-world applications.",CFD Simulation of an Aircraft Wing,Online
+Civil Engineering,Structural Health Monitoring & Smart Infrastructure,6 Weeks,$299,"Study structural integrity monitoring, AI-based analysis, and digital twin technology.",Sensor-based Crack Detection System,Online
+Civil Engineering,Building Information Modeling (BIM) with Revit,5 Weeks,$279,"Gain hands-on experience in 3D modeling, BIM workflows, and Revit tools for smart construction.",Design a Smart Building in Revit,Online
+Mining Engineering,Mine Planning & Design using AutoCAD & Surpac,6 Weeks,$299,"Understand mine planning, safety regulations, and optimization strategies using AutoCAD & Surpac.",Design an Open-Pit Mine in AutoCAD,Online
+Mining Engineering,AI & IoT in Smart Mining Operations,8 Weeks,$349,"Explore predictive maintenance, remote sensing, and IoT applications in the mining industry.",IoT-based Mining Equipment Monitoring System,Online
