@@ -9,6 +9,29 @@ document.addEventListener("DOMContentLoaded", function () {
                     let courses = results.data;
                     let courseContainer = document.getElementById("course-container");
 
+                    // Get unique categories and modes
+                    let categories = Array.from(new Set(courses.map(course => course["Category"]))).sort();
+                    let modes = Array.from(new Set(courses.map(course => course["Mode"]))).sort();
+
+                    // Populate category filter dropdown
+                    let categoryDropdown = document.getElementById("categoryFilter");
+                    categories.forEach(category => {
+                        let option = document.createElement("option");
+                        option.value = category;
+                        option.textContent = category;
+                        categoryDropdown.appendChild(option);
+                    });
+
+                    // Populate mode filter dropdown
+                    let modeDropdown = document.getElementById("modeFilter");
+                    modes.forEach(mode => {
+                        let option = document.createElement("option");
+                        option.value = mode;
+                        option.textContent = mode;
+                        modeDropdown.appendChild(option);
+                    });
+
+                    // Function to display courses based on filters
                     function displayCourses(filteredCourses) {
                         courseContainer.innerHTML = ""; // Clear existing content
 
@@ -41,8 +64,27 @@ document.addEventListener("DOMContentLoaded", function () {
                         });
                     }
 
-                    // Display all courses
+                    // Filter function based on selected filters
+                    function applyFilters() {
+                        let selectedCategory = document.getElementById("categoryFilter").value;
+                        let selectedMode = document.getElementById("modeFilter").value;
+
+                        // Filter courses based on selected category and mode
+                        let filteredCourses = courses.filter(course => {
+                            let categoryMatch = selectedCategory === "all" || course["Category"] === selectedCategory;
+                            let modeMatch = selectedMode === "all" || course["Mode"] === selectedMode;
+                            return categoryMatch && modeMatch;
+                        });
+
+                        displayCourses(filteredCourses); // Display filtered courses
+                    }
+
+                    // Display all courses initially
                     displayCourses(courses);
+
+                    // Event listener for filter application
+                    document.getElementById("categoryFilter").addEventListener("change", applyFilters);
+                    document.getElementById("modeFilter").addEventListener("change", applyFilters);
                 }
             });
         })
