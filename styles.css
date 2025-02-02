@@ -1,7 +1,13 @@
 /* Navbar Styling */
 .navbar {
     background-color: white;
-    padding: 12px 0;
+    padding: 5px 0;
+}
+
+.navbar-logo {
+    height: 70px; /* Adjust height as needed */
+    width: auto; /* Keep aspect ratio */
+    border-radius: 5px; /* Slight rounding for a modern look */
 }
 
 /* Brand Name */
@@ -436,11 +442,11 @@
 }
 
 .team-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+    width: 120px;  /* Adjust the size as needed */
+    height: 120px; /* Keep height and width equal for a perfect circle */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: contain; /* Ensures image fills the circle while keeping proportions */
+    object-position: center; /* Centers the image */
 }
 
 /* FAQ Section */
@@ -638,8 +644,3 @@
 .btn-primary:hover {
     background: #673AB7;
 }
-
-/* Contact Form */
-
-
-
