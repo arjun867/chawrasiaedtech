@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     let testimonials = [
-        { name: "SANAK", text: "Chawrasia EdTech has an outstanding math teacher who truly knows how to bring the subject to life. Highly recommended!" },
+        { name: "Sanak", text: "Chawrasia EdTech has an outstanding math teacher who truly knows how to bring the subject to life. Highly recommended!" },
         { name: "Sidharth", text: "Direct & easy to understand explanations for all topics." },
         { name: "Vaishali", text: "Good patience and good technique." },
         { name: "Rafia Naaz", text: "Fantastic teacher! Clear explanations and always help students grasp even the hardest concepts." },
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { name: "Thet Htut", text: "The tutor connected me with another expert for another subject I needed help with." },
         { name: "Vamsi", text: "Amazing tutor! Very patient and approachable. Listened to my problems and provided excellent lessons." },
         { name: "Yousif", text: "Chawrasia EdTech helped me find someone knowledgeable in my field of studies. Highly recommend it!" },
-        { name: "BALA", text: "Great learning experience! The tutor is very thoughtful and quick to respond." },
+        { name: "Bala", text: "Great learning experience! The tutor is very thoughtful and quick to respond." },
         { name: "Kishlaya", text: "A perfect teacher with proper knowledge." },
         { name: "Sweta", text: "Very knowledgeable tutors and great help with assignments." },
         { name: "Nikhil", text: "Excellent methodology for explaining concepts. Very clear and precise!" },
