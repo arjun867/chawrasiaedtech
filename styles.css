@@ -175,18 +175,25 @@
 }
 
 /* Course Card */
+/* In styles.css */
+
+/* --- DELETE THIS ENTIRE RULE --- */
+.course-card-content {
+    flex-grow: 1; 
+}
+
+/* --- AND MODIFY THIS RULE --- */
 .course-card {
-    /* Ensure All Course Cards Have the Same Height */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%; /* Makes all cards equal */
+    height: 100%; 
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     text-align: left;
+    /* We don't need margin-bottom here anymore because we added a row-gap to the parent .row */
 }
 
 .course-card:hover {
@@ -403,7 +410,7 @@
 
 /* Team Section */
 .team-section {
-    margin-bottom: -20px;
+    /* margin-bottom: -20px; */
     text-align: center;
     padding: 20px 0;
     background-color: #f9f9f9;
@@ -566,6 +573,10 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin-bottom: 20px;
+    height: 100%; /* This is the key to make cards equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
 }
 
 .testimonial-text {
@@ -643,4 +654,32 @@
 }
 .btn-primary:hover {
     background: #673AB7;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed; /* Makes it float */
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366; /* Official WhatsApp Green */
+    color: #FFF;
+    border-radius: 50px; /* Makes it circular */
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000; /* Ensures it's on top of other content */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Center the icon inside the circle */
+.whatsapp-float i {
+    margin-top: 15px;
+}
+
+/* Add a hover effect */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: white; /* Keep icon color white on hover */
 }
