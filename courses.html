@@ -43,18 +43,26 @@
             </div>
 
             <!-- Filter Section -->
-            <div class="filter-container">
-                <select id="categoryFilter" class="filter-dropdown">
-                    <option value="all">All Categories</option>
-                </select>
-            
-                <select id="modeFilter" class="filter-dropdown">
-                    <option value="all">All Modes</option>
-                </select>
-            
-                <button class="btn viewall-btn" onclick="applyFilters()">Apply Filters</button>
-            </div>
-            
+
+<div class="filter-container">
+    <!-- Level 1 Filter -->
+    <select id="filter1" class="filter-dropdown">
+        <option value="all">Select Category...</option>
+    </select>
+    
+    <!-- Level 2 Filter (Initially Disabled) -->
+    <select id="filter2" class="filter-dropdown" disabled>
+        <option value="all">Select Sub-Category...</option>
+    </select>
+    
+    <!-- Level 3 Filter (Initially Disabled) -->
+    <select id="filter3" class="filter-dropdown" disabled>
+        <option value="all">Select Specialization...</option>
+    </select>
+
+    <!-- Reset Button -->
+    <button class="btn viewall-btn" onclick="resetFilters()">Reset Filters</button>
+</div>            
 
             <div class="row" id="course-container">
                 <!-- Courses will be dynamically inserted here -->
