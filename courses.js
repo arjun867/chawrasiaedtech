@@ -28,10 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
             courseContainer.innerHTML = `<p class="text-center text-danger">Could not load course data. Please try again later.</p>`;
         });
 
-    // --- POPULATE FILTERS ---
+    // --- POPULATE FILTERS (No changes needed here) ---
 
     function populateFilter1() {
-        // Get unique values from the "Category1" column
         const categories = [...new Set(allCourses.map(course => course.Category1).filter(Boolean))].sort();
         categories.forEach(category => {
             const option = document.createElement("option");
@@ -49,9 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         filter3.disabled = true;
 
         if (selectedCat1 !== 'all') {
-            // Find all courses matching the selected Category1
             const relevantCourses = allCourses.filter(course => course.Category1 === selectedCat1);
-            // Get unique Category2 values from that subset
             const subCategories = [...new Set(relevantCourses.map(course => course.Category2).filter(Boolean))].sort();
             
             if (subCategories.length > 0) {
@@ -90,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
         applyFilters(); // Update display
     }
 
-    // --- FILTER AND DISPLAY LOGIC ---
+    // --- FILTER LOGIC (No changes needed here) ---
 
     function applyFilters() {
         const selectedCat1 = filter1.value;
@@ -107,6 +104,8 @@ document.addEventListener("DOMContentLoaded", function () {
         displayCourses(filteredCourses);
     }
 
+    // --- DISPLAY LOGIC (THIS IS THE MODIFIED SECTION) ---
+
     function displayCourses(coursesToDisplay) {
         courseContainer.innerHTML = ""; // Clear existing content
 
@@ -116,10 +115,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         coursesToDisplay.forEach(course => {
-            const formPaymentWithCourse = `https://docs.google.com/forms/d/e/1FAIpQLSchJEW6cWG2wuzBeDR7dHL8DxGZ7XRB6qAl15uMGH9FThqPnA/viewform?usp=pp_url&entry.YOUR_COURSE_NAME_FIELD_ID=${encodeURIComponent(course["Course Name"])}`;
+            // This link pre-fills the course name in your Google Form. It's used for the "Know More" button.
+            // IMPORTANT: Make sure to replace "YOUR_COURSE_NAME_FIELD_ID" with your actual field ID from Google Forms.
+            const courseFormLink = `https://docs.google.com/forms/d/e/1FAIpQLSchJEW6cWG2wuzBeDR7dHL8DxGZ7XRB6qAl15uMGH9FThqPnA/viewform?usp=pp_url&entry.YOUR_COURSE_NAME_FIELD_ID=${encodeURIComponent(course["Course Name"])}`;
             
-            // NOTE: Replace "YOUR_COURSE_NAME_FIELD_ID" with the actual entry ID from your Google Form's pre-filled link.
-
+            // --- MODIFIED SECTION START ---
+            
+            // This is the new, simplified HTML for the course card.
             const courseHTML = `
                 <div class="col-md-6 col-lg-4 col-xl-3 mb-4 d-flex align-items-stretch">
                     <div class="course-card d-flex flex-column">
@@ -128,25 +130,24 @@ document.addEventListener("DOMContentLoaded", function () {
                             <p><strong>Duration:</strong> ${course["Duration"]}</p>
                             <p><strong>Mode:</strong> ${course["Mode"]}</p>
                             <p class="course-desc">${course["Modules"] || 'Detailed curriculum available.'}</p>
-                            <p><strong>Price:</strong> ${course["Price (USD)"]}</p>
                         </div>
-                        <div class="btn-group mt-auto">
-                            <a href="contact.html" class="btn btn-outline-primary">Know More</a>
-                            <a href="${formPaymentWithCourse}" class="btn btn-primary" target="_blank">Buy Now</a>
+                        <div class="mt-auto pt-3">
+                            <a href="${courseFormLink}" class="btn btn-primary w-100" target="_blank">Know More</a>
                         </div>
                     </div>
                 </div>
             `;
+            // --- MODIFIED SECTION END ---
+
             courseContainer.innerHTML += courseHTML;
         });
     }
 
-    // --- EVENT LISTENERS ---
+    // --- EVENT LISTENERS (No changes needed here) ---
     filter1.addEventListener("change", updateFilter2);
     filter2.addEventListener("change", updateFilter3);
     filter3.addEventListener("change", applyFilters);
 
-    // Make the reset button available globally
     window.resetFilters = function() {
         filter1.value = 'all';
         filter2.value = 'all';
