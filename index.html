@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chawrasia Edtech</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Chawrasia EdTech - Master The Skills of Tomorrow</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap & Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Your Custom CSS (Must be after Bootstrap) -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+
+    <!-- =================================================================== -->
+    <!-- NAVBAR                                                            -->
+    <!-- =================================================================== -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
-            <!-- Logo and Brand Name -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo.png" alt="Logo" class="navbar-logo"> <!-- Replace with your actual logo path -->
+                <img src="images/logo.png" alt="Logo" class="navbar-logo">
                 <span class="ms-2">Chawrasia EdTech</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,258 +33,381 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html" style="color: #673AB7;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
                 </ul>
-                <a href="course-contact.html" class="btn contact-btn">Contact</a>
+                <a href="course-contact.html" class="btn contact-btn">Contact Us</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
+    <!-- =================================================================== -->
+    <!-- HERO SECTION                                                      -->
+    <!-- =================================================================== -->
+    <section class="hero-section fade-in-section" id="home">
+        <div class="container text-center">
+            <h1 class="hero-title">Master the Skills of <span class="highlight">Tomorrow, Today</span></h1>
+            <p class="hero-subtitle">Expert-led courses in technology, engineering, and science designed for real-world success.</p>
+            <a href="courses.html" class="btn btn-primary btn-lg">Explore Course Catalog</a>
+        </div>
+        
+        <div class="hero-cards-container">
+            <div class="hero-cards-track">
+                <!-- Card Set 1 -->
+                <div class="hero-card"><i class="fas fa-robot"></i> AI & Machine Learning</div>
+                <div class="hero-card"><i class="fas fa-car-battery"></i> Electric Vehicle Tech</div>
+                <div class="hero-card"><i class="fas fa-microchip"></i> IoT & Automation</div>
+                <div class="hero-card"><i class="fas fa-drafting-compass"></i> Engineering Design</div>
+                <div class="hero-card"><i class="fas fa-chart-line"></i> Competitive Exams</div>
+                <div class="hero-card"><i class="fas fa-school"></i> School & Tuitions</div>
+                <div class="hero-card"><i class="fas fa-code"></i> Programming</div>
+                
+                <!-- Card Set 2 (Duplicate for seamless loop) -->
+                <div class="hero-card"><i class="fas fa-robot"></i> AI & Machine Learning</div>
+                <div class="hero-card"><i class="fas fa-car-battery"></i> Electric Vehicle Tech</div>
+                <div class="hero-card"><i class="fas fa-microchip"></i> IoT & Automation</div>
+                <div class="hero-card"><i class="fas fa-drafting-compass"></i> Engineering Design</div>
+                <div class="hero-card"><i class="fas fa-chart-line"></i> Competitive Exams</div>
+                <div class="hero-card"><i class="fas fa-school"></i> School & Tuitions</div>
+                <div class="hero-card"><i class="fas fa-code"></i> Programming</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- WHY CHOOSE US? (FEATURES)                                         -->
+    <!-- =================================================================== -->
+    <section class="section-padding fade-in-section" id="features">
         <div class="container">
-            <div class="row align-items-center">
-                <!-- Left Side: Text Content -->
-                <div class="col-lg-6 col-md-6 col-12">
-                    <h1 class="hero-title">Your Journey to Success Starts Here!</h1>
-                    <p class="hero-subtitle">Join our expert-led courses and gain real-world knowledge to excel in your career.</p>
-                    <p class="hero-description">Our courses are designed by industry experts to help you gain practical knowledge. Whether you're a beginner or a professional, we have the right course for you. Enroll now and start learning!</p>
-                    <a href="courses.html" class="btn btn-primary hero-btn">View Courses</a>
+            <div class="text-center">
+                <h2 class="section-title">Why Chawrasia EdTech?</h2>
+                <p class="section-subtitle">We are committed to providing an unparalleled learning experience that is effective, flexible, and tailored to your success.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+                        <h3 class="feature-title">Expert Instructors</h3>
+                        <p class="feature-description">Learn from industry veterans and academic experts who bring real-world experience to every lesson.</p>
+                    </div>
                 </div>
-                <!-- Right Side: Image -->
-                <div class="col-lg-6 col-md-6 col-12 text-center">
-                    <img src="images/herosecimage.webp" alt="Student studying on a laptop" class="hero-image">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3 class="feature-title">Practical & Relevant</h3>
+                        <p class="feature-description">Our courses are designed with a hands-on approach, focusing on skills you can apply directly to your career.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                        <h3 class="feature-title">Personalized Mentorship</h3>
+                        <p class="feature-description">We provide dedicated support and one-on-one guidance to ensure you truly understand every concept.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- In index.html, replace the entire "courses-section" with this -->
-
-<!-- =================================================================== -->
-<!-- UPDATED: Courses Overview Section (with Clickable Cards)            -->
-<!-- =================================================================== -->
-<section class="courses-overview">
-    <div class="container">
-        <!-- Section Title and Subtitle -->
-        <div class="text-center mb-5">
-            <h2 class="section-title">A Course for Every Ambition</h2>
-            <p class="section-subtitle-custom">From foundational learning to professional mastery, we have a path for you.</p>
-        </div>
-
-        <!-- Category Cards Row -->
-        <div class="row justify-content-center row-gap-4">
-
-            <!-- Category 1: School Courses (NOW CLICKABLE) -->
-            <div class="col-lg-3 col-md-6">
-                <!-- The entire card is wrapped in this <a> tag -->
-                <a href="courses.html" class="category-card-link">
-                    <div class="category-card h-100">
-                        <div class="category-icon">
-                            <i class="fas fa-school"></i>
-                        </div>
-                        <h3 class="category-title">School Students</h3>
-                        <p class="category-description">
-                            Building strong foundations in core subjects with engaging lessons to help you excel in exams.
-                        </p>
-                        <ul class="category-list">
-                            <li><i class="fas fa-check-circle"></i> Mathematics (VI-XII)</li>
-                            <li><i class="fas fa-check-circle"></i> Physics & Chemistry</li>
-                            <li><i class="fas fa-check-circle"></i> Board Exam Prep</li>
-                        </ul>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Category 2: College & University (NOW CLICKABLE) -->
-            <div class="col-lg-3 col-md-6">
-                <a href="courses.html" class="category-card-link">
-                    <div class="category-card h-100">
-                        <div class="category-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3 class="category-title">University Scholars</h3>
-                        <p class="category-description">
-                            Deepen your understanding of complex engineering and technical topics with expert-led courses.
-                        </p>
-                        <ul class="category-list">
-                            <li><i class="fas fa-check-circle"></i> Power Systems</li>
-                            <li><i class="fas fa-check-circle"></i> EV Engineering</li>
-                            <li><i class="fas fa-check-circle"></i> Advanced AI Concepts</li>
-                        </ul>
-                    </div>
-                </a>
-            </div>
-            
-            <!-- Category 3: Skill-Based Courses (NOW CLICKABLE) -->
-            <div class="col-lg-3 col-md-6">
-                <a href="courses.html" class="category-card-link">
-                    <div class="category-card h-100">
-                        <div class="category-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3 class="category-title">Skill Seekers</h3>
-                        <p class="category-description">
-                            Gain practical, in-demand skills for the modern workplace, designed for real-world application.
-                        </p>
-                        <ul class="category-list">
-                            <li><i class="fas fa-check-circle"></i> EV Charging Tech</li>
-                            <li><i class="fas fa-check-circle"></i> AI & IoT Applications</li>
-                            <li><i class="fas fa-check-circle"></i> Professional Development</li>
-                        </ul>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Category 4: Competitive Exams (NOW CLICKABLE) -->
-            <div class="col-lg-3 col-md-6">
-                <a href="courses.html" class="category-card-link">
-                    <div class="category-card h-100">
-                        <div class="category-icon">
-                            <i class="fas fa-file-signature"></i>
-                        </div>
-                        <h3 class="category-title">Competitive Exams</h3>
-                        <p class="category-description">
-                            Strategic preparation and comprehensive content to help you crack entrance and government exams.
-                        </p>
-                        <ul class="category-list">
-                            <li><i class="fas fa-check-circle"></i> Engineering Entrance</li>
-                            <li><i class="fas fa-check-circle"></i> Aptitude & Reasoning</li>
-                            <li><i class="fas fa-check-circle"></i> Specialized Tests</li>
-                        </ul>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-
-        <!-- View All Button -->
-        <div class="text-center mt-5">
-            <a href="courses.html" class="btn viewall-btn">Explore All Our Courses</a>
-        </div>
-    </div>
-</section>
-    <!-- Testimonials Section -->
-    <section class="testimonials">
+    <!-- =================================================================== -->
+    <!-- ABOUT US SECTION (REDESIGNED WITHOUT IMAGE)                       -->
+    <!-- =================================================================== -->
+    <section class="section-padding bg-light fade-in-section" id="about">
         <div class="container">
-            <h2 class="section-title">What Our Learners Say</h2>
-    
-            <!-- Added `row-gap` for better spacing on mobile -->
-            <div class="row row-gap-4">
-                <!-- Testimonial 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Chawrasia EdTech has an outstanding math teacher who truly knows how to bring the subject to life. Highly recommended!"</p>
-                        <h4 class="testimonial-name">- Sanak</h4>
-                    </div>
-                </div>
-    
-                <!-- Testimonial 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Direct & easy to understand explanations for all topics."</p>
-                        <h4 class="testimonial-name">- Sidharth</h4>
-                    </div>
-                </div>
-    
-                <!-- Testimonial 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Good patience and good technique."</p>
-                        <h4 class="testimonial-name">- Vaishali</h4>
-                    </div>
-                </div>
-    
-                <!-- Testimonial 4 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Fantastic teacher! Clear explanations and always help students grasp even the hardest concepts."</p>
-                        <h4 class="testimonial-name">- Rafia Naaz</h4>
-                    </div>
-                </div>
-    
-                <!-- Testimonial 5 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Great teacher! Makes everything clear when explaining."</p>
-                        <h4 class="testimonial-name">- Ranju</h4>
-                    </div>
-                </div>
-    
-                <!-- Testimonial 6 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Take extra care to explain each concept for proper understanding. Excellent communication skills."</p>
-                        <h4 class="testimonial-name">- Ajay</h4>
-                    </div>
-                </div>
+            <div class="text-center">
+                <h2 class="section-title">The Heart of Our Mission</h2>
+                <p class="section-subtitle">We started Chawrasia EdTech with a simple but powerful vision: to make high-quality, practical education accessible to everyone, everywhere.</p>
             </div>
-    
-            <!-- View All Button -->
-            <div class="text-center mt-4">
-                <a href="testimonials.html" class="btn viewall-btn">View All Testimonials</a>
+            <div class="row g-5">
+                <!-- Our Mission -->
+                <div class="col-lg-6">
+                    <div class="about-content-box">
+                        <h3 class="about-box-title"><i class="fas fa-bullseye me-2"></i> Our Mission</h3>
+                        <p>To redefine learning through innovation, bridging the gap between academic theory and real-world industry demands. We strive to empower students with the skills and confidence they need to succeed.</p>
+                        <ul class="about-list">
+                            <li><i class="fas fa-check-circle"></i> Create adaptive and engaging learning experiences.</li>
+                            <li><i class="fas fa-check-circle"></i> Promote affordable, practical, and lifelong learning.</li>
+                            <li><i class="fas fa-check-circle"></i> Offer customized training for both individuals and institutions.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Our Vision -->
+                <div class="col-lg-6">
+                    <div class="about-content-box">
+                        <h3 class="about-box-title"><i class="fas fa-rocket me-2"></i> Our Vision</h3>
+                        <p>We envision a world where education is not a barrier but a gateway to opportunity, driven by technology and a passion for teaching. We aim to be a global leader in tech-enabled, career-focused education.</p>
+                        <ul class="about-list">
+                            <li><i class="fas fa-check-circle"></i> Integrate AI-driven analytics for personalized learning.</li>
+                            <li><i class="fas fa-check-circle"></i> Revolutionize how knowledge is delivered and applied.</li>
+                            <li><i class="fas fa-check-circle"></i> Fuel career growth through continuous skill development.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section (MODIFIED) -->
-    <section class="team-section">
+    <!-- =================================================================== -->
+    <!-- TEAM SECTION (INTEGRATED)                                         -->
+    <!-- =================================================================== -->
+    <section class="team-section section-padding fade-in-section" id="team">
         <div class="container">
-            <h2 class="section-title">👨‍🏫 Our Team</h2>
-            <div class="team-container d-flex justify-content-center" id="team-container">
-                <!-- Team members will be dynamically inserted here -->
+            <div class="text-center">
+                <h2 class="section-title">Meet Our Expert Team</h2>
+                <p class="section-subtitle">The passionate educators behind our quality courses. We are a blend of academic scholars and industry professionals.</p>
             </div>
-            <!-- "Join Our Team" Button Added Here -->
-            <div class="text-center mt-4">
-                <!-- In the Team Section -->
-                <a href="join-team.html" class="btn btn-primary">Join Our Team</a>
+            <div class="row justify-content-center" id="team-container">
+                <!-- Team members will be dynamically inserted here by team.js -->
+                <!-- Add a loading state for better UX -->
+                <div class="col-12 text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Loading Team...</p>
+                </div>
+            </div>
+             <div class="text-center mt-5">
+                <a href="join-team.html" class="btn btn-primary">Join Our Team of Experts</a>
             </div>
         </div>
     </section>
 
+    <!-- =================================================================== -->
+    <!-- HOW IT WORKS (FIXED)                                              -->
+    <!-- =================================================================== -->
+    <section class="section-padding bg-light fade-in-section" id="how-it-works">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Your Simple Path to Success</h2>
+                <p class="section-subtitle">Getting started is as easy as one, two, three.</p>
+            </div>
+            <div class="row g-4 timeline">
+                <div class="col-lg-4">
+                    <div class="timeline-step">
+                        <div class="timeline-icon">1</div>
+                        <h3 class="timeline-title">Discover Your Course</h3>
+                        <p>Browse our detailed course catalog. Find the program that fits your ambition and career goals.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="timeline-step">
+                        <div class="timeline-icon">2</div>
+                        <h3 class="timeline-title">Connect With Us</h3>
+                        <p>Have questions? Reach out via WhatsApp, email, or a call. Our expert team is ready to help.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="timeline-step">
+                        <div class="timeline-icon">3</div>
+                        <h3 class="timeline-title">Enroll & Begin Learning</h3>
+                        <p>Once you're ready, we'll guide you through enrollment and add you to your virtual classroom.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- =================================================================== -->
+    <!-- OUR IMPACT (STATS SECTION)                                        -->
+    <!-- =================================================================== -->
+    <section class="stats-section section-padding fade-in-section" id="stats">
+        <div class="container">
+             <div class="text-center">
+                <h2 class="section-title">Our Impact in Numbers</h2>
+                <p class="section-subtitle">We're proud of the community we've built and the results we've delivered.</p>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+                        <h3 class="stat-number">1,000+</h3>
+                        <p class="stat-title">Students Empowered</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-book-open"></i></div>
+                        <h3 class="stat-number">50+</h3>
+                        <p class="stat-title">Specialized Courses</p>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-star"></i></div>
+                        <h3 class="stat-number">4.8/5</h3>
+                        <p class="stat-title">Average Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TESTIMONIALS                                                      -->
+    <!-- =================================================================== -->
+    <section class="section-padding bg-light fade-in-section" id="testimonials">
+        <div class="container">
+             <div class="text-center">
+                <h2 class="section-title">Loved by Learners Worldwide</h2>
+                <p class="section-subtitle">Real stories from students who have achieved their goals with us.</p>
+            </div>
+            <div class="testimonial-slider-container">
+                <div class="testimonial-slider">
+                    <!-- Testimonials will be injected here by script.js -->
+                </div>
+                <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                <div class="slider-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- FAQ SECTION (FIXED - ALL COLLAPSED)                               -->
+    <!-- =================================================================== -->
+    <section class="section-padding fade-in-section" id="faq">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Have questions? We've got answers. If you can't find what you're looking for, feel free to contact us.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How do I enroll in a course?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Simply browse our <a href="courses.html">courses page</a>, find a course you're interested in, and contact us via the methods listed. Our team will personally guide you through the enrollment process and payment details.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    What learning materials will I get?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You'll receive access to our Google Classroom which includes video lectures, notes, assignments, and project files. You'll also be part of a community where you can ask questions directly to the instructor.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                   Do you provide certificates?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! Upon successful completion of any course, you will receive an industry-recognized certificate from Chawrasia EdTech that you can add to your resume and LinkedIn profile.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                   Are the classes live or pre-recorded?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                   We offer a hybrid model. Most courses consist of high-quality pre-recorded lectures that you can watch at your own pace, supplemented with live doubt-clearing sessions with the instructor to ensure your questions are answered.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- =================================================================== -->
+    <!-- FINAL CTA                                                         -->
+    <!-- =================================================================== -->
+    <section class="final-cta fade-in-section">
+        <div class="container text-center">
+            <h2 class="cta-title">Ready to Take the Next Step?</h2>
+            <p class="cta-subtitle">Our comprehensive course catalog is waiting for you. Find your path to success today.</p>
+            <a href="courses.html" class="btn btn-light btn-lg">View All Courses</a>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- FOOTER                                                            -->
+    <!-- =================================================================== -->
     <footer class="footer">
         <div class="container">
-            <div class="row">
-                <!-- Left: Brand Name -->
-                <div class="col-lg-4 col-md-12 footer-brand">
-                    <h2>Chawrasia EdTech</h2>
-                </div>
-    
-                <!-- Middle: Social Media Icons -->
-                <div class="col-lg-4 col-md-12 footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="mailto:info@chawrasiaedtech.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        
-                </div>
-    
-                <!-- Right: Navigation Links (Two Columns) -->
-                <div class="col-lg-4 col-md-12 footer-links">
-                    <div class="footer-links-column">
-                        <a href="index.html">Home</a>
-                        <a href="courses.html">Courses</a>
-                    </div>
-                    <div class="footer-links-column">
-                        <a href="about.html">About</a>
-                        <a href="course-contact.html" class="btn contact-btn">Contact</a>
+            <div class="row gy-4">
+                <!-- Column 1: Brand -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-brand">
+                        <h2>Chawrasia EdTech</h2>
+                        <p>Empowering minds through innovative, accessible, and practical education for a brighter future.</p>
+                        <div class="footer-social mt-3">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        </div>
                     </div>
                 </div>
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="about.html">About Us</a>
+                        <a href="courses.html">All Courses</a>
+                        <a href="#faq">FAQs</a>
+                        <a href="join-team.html">Join Our Team</a>
+                    </div>
+                </div>
+                <!-- Column 3: Course Categories -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Popular Categories</h5>
+                    <div class="footer-links">
+                        <a href="courses.html">School & Board Prep</a>
+                        <a href="courses.html">University Level</a>
+                        <a href="courses.html">Skill Development</a>
+                        <a href="courses.html">Competitive Exams</a>
+                    </div>
+                </div>
+                 <!-- Column 4: Contact -->
+                <div class="col-lg-3 col-md-12">
+                     <h5>Contact Us</h5>
+                     <div class="footer-links">
+                        <a href="mailto:info@chawrasiaedtech.com"><i class="fas fa-envelope me-2"></i>info@chawrasiaedtech.com</a>
+                        <a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone me-2"></i>+91 XX-XXXX-XXXX</a>
+                        <a href="course-contact.html">Send a Message</a>
+                     </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Chawrasia EdTech. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
-    <script src="team.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- WhatsApp Float Button just change Xs to original number as 91 is indian code -->
+    <!-- WhatsApp Float Button -->
     <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <script src="team.js"></script> <!-- Make sure you have this JS file for the team section -->
+    <script src="script.js"></script>
 
 </body>
 </html>

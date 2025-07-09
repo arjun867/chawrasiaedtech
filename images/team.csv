@@ -1,2 +1,4 @@
-Name,Role,Image
-Dr. Sandeep Kumar Chawrasia,Ph.D. in Electrical Engineering,images/sandeep.jpg
+Name,Role,Image,Expertise,Highlights,LinkedIn
+Dr. Sandeep Kumar Chawrasia,"Ph.D., Electrical Engineering",images/sandeep.jpg,"Power Systems, EV Tech, AI","15+ Years of Experience;Mentored 1000+ Students;Published Researcher",https://www.linkedin.com/
+Dr. Priya Sharma,"Ph.D., Physics",images/priya.jpg,"Quantum Mechanics, Thermodynamics","Head of Curriculum;Designed 30+ Courses;Expert in Pedagogy",https://www.linkedin.com/
+Rohan Gupta,"Senior Mentor, Maths",images/rohan.jpg,"Calculus, Algebra, Geometry","Top University Graduate;Specialist in Exam Prep;Received Teaching Excellence Award",

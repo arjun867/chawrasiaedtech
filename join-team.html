@@ -3,69 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Our Team - Chawrasia Edtech</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Join Our Team of Experts - Chawrasia EdTech</title>
+
+    <!-- External CSS - Bootstrap & Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- ALL NECESSARY CSS IS EMBEDDED BELOW FOR A GUARANTEED FIX -->
+    <style>
+        /* ===================================================================
+           1. GLOBAL VARIABLES & FONTS
+        ====================================================================== */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600;700&display=swap');
+
+        :root {
+            --primary-color: #5D3EBF;
+            --secondary-color: #1A237E;
+            --accent-color: #00BFA5;
+            --light-bg-color: #f8faff;
+            --white-color: #ffffff;
+            --text-color: #5f6c7b;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Lato', sans-serif;
+            --card-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
+        }
+
+        /* ===================================================================
+           2. FOOLPROOF PAGE LAYOUT STRUCTURE
+        ====================================================================== */
+        html, body { height: 100%; }
+        body {
+            font-family: var(--body-font);
+            color: var(--text-color);
+            background-color: var(--light-bg-color);
+            display: flex;
+            flex-direction: column;
+        }
+        .page-wrapper { flex-grow: 1; }
+
+        /* ===================================================================
+           3. NAVBAR & FOOTER STYLES (EXACT MATCH FROM HOMEPAGE)
+        ====================================================================== */
+        .navbar { background-color: var(--white-color); padding: 10px 0; }
+        .navbar-logo { height: 50px; }
+        .navbar-brand { font-family: var(--heading-font); font-weight: 700; font-size: 1.5rem; color: var(--primary-color) !important; }
+        .nav-link { font-family: var(--heading-font); font-weight: 500; color: var(--secondary-color) !important; margin: 0 10px; transition: color 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: var(--primary-color) !important; }
+        .contact-btn { background-color: var(--primary-color); color: var(--white-color) !important; padding: 10px 25px; border-radius: 50px; font-family: var(--heading-font); font-weight: 500; text-decoration: none; margin-left: 15px; transition: all 0.3s ease; }
+        .contact-btn:hover { background-color: var(--secondary-color); color: var(--white-color) !important; transform: translateY(-2px); }
+        
+        .footer { background-color: var(--secondary-color); color: #e0e0e0; padding: 60px 0 20px 0; flex-shrink: 0; }
+        .footer-brand h2 { font-family: var(--heading-font); font-weight: 700; color: var(--white-color); font-size: 1.8rem; margin-bottom: 15px; }
+        .footer-brand p { font-size: 0.95rem; max-width: 300px; }
+        .footer-social .social-icon { color: #e0e0e0; font-size: 1.2rem; margin-right: 15px; transition: all 0.3s ease; }
+        .footer-social .social-icon:hover { color: var(--accent-color); transform: translateY(-3px); }
+        .footer h5 { font-family: var(--heading-font); font-weight: 600; color: var(--white-color); margin-bottom: 20px; }
+        .footer-links a { display: block; color: #e0e0e0; text-decoration: none; margin-bottom: 12px; transition: all 0.3s ease; }
+        .footer-links a:hover { color: var(--accent-color); padding-left: 5px; }
+        .footer-bottom { border-top: 1px solid #3c448a; padding-top: 20px; margin-top: 40px; font-size: 0.9rem; text-align: center; }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25D366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; }
+        .whatsapp-float i { margin-top: 15px; }
+
+        /* ===================================================================
+           4. JOIN OUR TEAM PAGE SPECIFIC STYLES
+        ====================================================================== */
+        .page-header { background-color: var(--white-color); padding: 40px 0; border-bottom: 1px solid #e8eaf6; }
+        .page-title { font-family: var(--heading-font); font-weight: 700; color: var(--secondary-color); font-size: 3rem; margin-bottom: 10px; }
+        .page-subtitle { font-size: 1.15rem; color: var(--text-color); max-width: 600px; margin: 0 auto; }
+        .section-padding { padding: 60px 0; }
+        .section-title { font-family: var(--heading-font); font-weight: 700; color: var(--secondary-color); font-size: 2.5rem; margin-bottom: 15px; }
+        .section-subtitle { font-size: 1.1rem; color: var(--text-color); max-width: 650px; margin: 0 auto 60px auto; line-height: 1.7; }
+        
+        /* "Why Teach With Us" Section */
+        .perk-card { text-align: center; padding: 20px; }
+        .perk-icon { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px; }
+        .perk-title { font-family: var(--heading-font); font-size: 1.3rem; color: var(--secondary-color); margin-bottom: 10px; }
+
+        /* FINAL BALANCED CARD DESIGN */
+        .info-card {
+            background-color: var(--white-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #e8eaf6;
+            height: 100%;
+            flex-direction: column;
+        }
+        .info-card-title {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+        .info-card-subtitle {
+            color: var(--text-color);
+            margin-bottom: 30px;
+            flex-grow: 1; 
+        }
+
+        /* List style for "Who We're Looking For" */
+        .info-list { list-style: none; padding-left: 0; }
+        .info-list li { margin-bottom: 12px; display: flex; align-items: flex-start; }
+        .info-list li i { color: var(--accent-color); margin-right: 15px; font-size: 1.2rem; margin-top: 4px; }
+        
+        /* Contact Method style for "How to Apply" */
+        .contact-method-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            background-color: var(--light-bg-color);
+            border: 1px solid transparent;
+        }
+        .contact-method-item:last-child { margin-bottom: 0; }
+        .contact-method-item:hover { transform: translateY(-3px); border-color: var(--primary-color); }
+        .contact-method-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-color);
+            font-size: 1.4rem;
+        }
+        .whatsapp-bg { background-color: #25D366; }
+        .email-bg { background-color: #EA4335; }
+        .phone-bg { background-color: var(--primary-color); }
+        .contact-method-text strong {
+            display: block;
+            font-family: var(--heading-font);
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+        }
+        .contact-method-text span {
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+    </style>
 </head>
 <body>
-    <!-- Re-usable Navbar (Same as before) -->
-    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
-        <!-- ... (your navbar code) ... -->
-    </nav>
 
-    <!-- =================================================================== -->
-    <!-- Page Header                                                         -->
-    <!-- =================================================================== -->
-    <section class="contact-page-header">
-        <div class="container text-center">
-            <h1 class="page-title">Join Our Team of Experts</h1>
-            <p class="page-subtitle">We're looking for passionate educators and innovators to shape the future of learning.</p>
-        </div>
-    </section>
-
-    <!-- =================================================================== -->
-    <!-- UPDATED Main Content Section (No Form)                             -->
-    <!-- =================================================================== -->
-    <section class="contact-form-section">
+    <!-- NAVBAR - THIS IS THE CORRECTED, FINAL VERSION -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
-            <div class="row justify-content-center">
-                <!-- A single, centered column for all content -->
-                <div class="col-lg-8">
-
-                    <!-- Box 1: Why Join Us -->
-                    <div class="why-join-box mb-5">
-                        <h3 class="box-title"><i class="fas fa-rocket me-2"></i>Why Join Chawrasia EdTech?</h3>
-                        <p>Become part of a dynamic team dedicated to making quality education accessible.</p>
-                        <ul class="why-join-list">
-                            <li><i class="fas fa-check-circle"></i> Inspire the next generation of learners.</li>
-                            <li><i class="fas fa-check-circle"></i> Work in a collaborative and supportive environment.</li>
-                            <li><i class="fas fa-check-circle"></i> Opportunity for professional growth and development.</li>
-                            <li><i class="fas fa-check-circle"></i> Contribute to innovative educational projects.</li>
-                            <li><i class="fas fa-check-circle"></i> Flexible work arrangements.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Box 2: How to Apply -->
-                    <div class="contact-options-box">
-                        <h3 class="box-title text-center"><i class="fas fa-paper-plane me-2"></i>How to Apply</h3>
-                        <p class="text-center mb-4">Interested in joining our mission? Please send your resume and a brief cover letter explaining your expertise and why you'd be a great fit for our team to the email address below.</p>
-                        <a href="mailto:careers@chawrasiaedtech.com" class="contact-option-item">
-                           <i class="fas fa-envelope"></i>
-                           <span>Email Your Application: careers@chawrasiaedtech.com</span>
-                        </a>
-                   </div>
-
-                </div>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" alt="Logo" class="navbar-logo">
+                <span class="ms-2">Chawrasia EdTech</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Testimonials</a></li>
+                </ul>
+                <a href="course-contact.html" class="btn contact-btn">Contact Us</a>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- Re-usable Footer (Same as before) -->
+    <!-- Main Page Content Wrapper -->
+    <div class="page-wrapper">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container text-center">
+                <h1 class="page-title">Join Our Team of Experts</h1>
+                <p class="page-subtitle">Are you passionate about education and an expert in your field? We're looking for you.</p>
+            </div>
+        </section>
+
+        <!-- "Why Teach With Us?" Section -->
+        <section class="section-padding" style="background-color: var(--white-color);">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Why Teach With Us?</h2>
+                    <p class="section-subtitle">Join a platform that values expertise, supports its educators, and is committed to making a real impact.</p>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="perk-card">
+                            <div class="perk-icon"><i class="fas fa-lightbulb"></i></div>
+                            <h4 class="perk-title">Share Your Knowledge</h4>
+                            <p>Inspire and empower the next generation of learners by sharing your deep subject matter expertise.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="perk-card">
+                            <div class="perk-icon"><i class="fas fa-handshake-angle"></i></div>
+                            <h4 class="perk-title">A Supportive Partnership</h4>
+                            <p>We see our instructors as partners. We provide the platform and support you need to focus on what you do best: teaching.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="perk-card">
+                            <div class="perk-icon"><i class="fas fa-calendar-alt"></i></div>
+                            <h4 class="perk-title">Flexible Engagement</h4>
+                            <p>We offer flexible arrangements that can fit your schedule, whether you're looking to teach full-time or part-time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- "Who We're Looking For" & "How to Apply" Section -->
+        <section class="section-padding">
+             <div class="container">
+                <div class="row g-5 justify-content-center">
+                    
+                    <!-- Left Column: Who We're Looking For -->
+                    <div class="col-lg-6">
+                        <div class="info-card">
+                            <h3 class="info-card-title"><i class="fas fa-user-check me-2 text-primary"></i>Who We're Looking For</h3>
+                            <p class="info-card-subtitle">We are constantly seeking talented individuals passionate about their field. We are particularly interested in hearing from:</p>
+                            <ul class="info-list">
+                                <li><i class="fas fa-check-circle"></i> <strong>Passionate Educators</strong> with a gift for simplifying complex topics.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Industry Professionals</strong> who can bring real-world context to our courses.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Subject Matter Experts</strong> in Engineering, Science, Commerce, and Technology.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Researchers and Academics</strong> with Ph.D. or Master's degrees.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: How to Apply -->
+                    <div class="col-lg-6">
+                        <div class="info-card">
+                            <h3 class="info-card-title"><i class="fas fa-paper-plane me-2 text-primary"></i>How to Apply</h3>
+                            <p class="info-card-subtitle">If you fit the description, we would be delighted to hear from you. Please send your resume/CV and a brief introduction.</p>
+                            
+                            <a href="mailto:careers@chawrasiaedtech.com?subject=Application to Join as an Expert" class="contact-method-item">
+                                <div class="contact-method-icon email-bg"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-method-text">
+                                    <strong>Email Your Application</strong>
+                                    <span>careers@chawrasiaedtech.com</span>
+                                </div>
+                            </a>
+                            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="contact-method-item">
+                                <div class="contact-method-icon whatsapp-bg"><i class="fab fa-whatsapp"></i></div>
+                                <div class="contact-method-text">
+                                    <strong>Connect on WhatsApp</strong>
+                                    <span>Introduce yourself & your expertise</span>
+                                </div>
+                            </a>
+                            <a href="tel:+91XXXXXXXXXX" class="contact-method-item">
+                                <div class="contact-method-icon phone-bg"><i class="fas fa-phone"></i></div>
+                                <div class="contact-method-text">
+                                    <strong>Call for a Discussion</strong>
+                                    <span>+91 XX-XXXX-XXXX</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+             </div>
+        </section>
+        
+    </div> <!-- End of .page-wrapper -->
+    
+    <!-- FOOTER - THIS IS THE CORRECTED, FINAL VERSION -->
     <footer class="footer">
-        <!-- ... (your footer code) ... -->
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-brand">
+                        <h2>Chawrasia EdTech</h2>
+                        <p>Empowering minds through innovative, accessible, and practical education for a brighter future.</p>
+                        <div class="footer-social mt-3">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="about.html">About Us</a>
+                        <a href="courses.html">All Courses</a>
+                        <a href="index.html#faq">FAQs</a>
+                        <a href="join-team.html">Join Our Team</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Popular Categories</h5>
+                    <div class="footer-links">
+                        <a href="courses.html">School & Board Prep</a>
+                        <a href="courses.html">University Level</a>
+                        <a href="courses.html">Skill Development</a>
+                        <a href="courses.html">Competitive Exams</a>
+                    </div>
+                </div>
+                 <div class="col-lg-3 col-md-12">
+                     <h5>Contact Us</h5>
+                     <div class="footer-links">
+                        <a href="mailto:info@chawrasiaedtech.com"><i class="fas fa-envelope me-2"></i>info@chawrasiaedtech.com</a>
+                        <a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone me-2"></i>+91 XX-XXXX-XXXX</a>
+                        <a href="course-contact.html">Send a Message</a>
+                     </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Chawrasia EdTech. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
 </body>
 </html>

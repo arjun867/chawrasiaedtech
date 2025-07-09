@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Courses</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>All Courses - Chawrasia EdTech</title>
 
+    <!-- Google Fonts & Icons (Same as index.html) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+
+    <!-- Re-usable Navbar (Same as your homepage) -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
-            <!-- <a class="navbar-brand" href="index.html">Chawrasia Edtech</a> -->
-             <!-- Logo and Brand Name -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo.png" alt="Logo" class="navbar-logo"> <!-- Replace with your actual logo path -->
+                <img src="images/logo.png" alt="Logo" class="navbar-logo">
                 <span class="ms-2">Chawrasia EdTech</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,92 +30,127 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="courses.html" style="color: #673AB7;">Courses</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="#">Faculty</a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Testimonials</a></li>
                 </ul>
-                <a href="course-contact.html" class="btn contact-btn">Contact</a>
+                <a href="course-contact.html" class="btn contact-btn">Contact Us</a>
             </div>
         </div>
     </nav>
 
-    <section class="courses-section">
-        <div class="container">
-            <h2 class="section-title">All Available Courses</h2>
+    <!-- =================================================================== -->
+    <!-- PAGE HEADER                                                       -->
+    <!-- =================================================================== -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="page-title">Explore Our Course Catalog</h1>
+            <p class="page-subtitle">Find the perfect course to advance your skills and career. Use the filters below to narrow your search.</p>
+        </div>
+    </section>
 
-            <div class="text-center mt-4">
-                <a href="course-contact.html" class="btn contact-btn">Get Custom Course</a>
+    <!-- =================================================================== -->
+    <!-- COURSES SECTION                                                   -->
+    <!-- =================================================================== -->
+    <section class="courses-page-section">
+        <div class="container">
+
+            <!-- Filter & Search Bar -->
+            <div class="filter-search-bar">
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-bar" class="form-control" placeholder="Search for a course (e.g., 'Python', 'EV')...">
+                </div>
+                <div class="filter-wrapper">
+                    <select id="filter1" class="form-select">
+                        <option value="all">All Categories</option>
+                    </select>
+                    <select id="filter2" class="form-select" disabled>
+                        <option value="all">All Sub-Categories</option>
+                    </select>
+                    <select id="filter3" class="form-select" disabled>
+                        <option value="all">All Specializations</option>
+                    </select>
+                    <button id="reset-filters-btn" class="btn btn-outline-secondary">Reset</button>
+                </div>
             </div>
 
-            <!-- Filter Section -->
+            <!-- Course Counter -->
+            <div id="course-counter" class="text-center mb-4"></div>
 
-<div class="filter-container">
-    <!-- Level 1 Filter -->
-    <select id="filter1" class="filter-dropdown">
-        <option value="all">Select Category...</option>
-    </select>
-    
-    <!-- Level 2 Filter (Initially Disabled) -->
-    <select id="filter2" class="filter-dropdown" disabled>
-        <option value="all">Select Sub-Category...</option>
-    </select>
-    
-    <!-- Level 3 Filter (Initially Disabled) -->
-    <select id="filter3" class="filter-dropdown" disabled>
-        <option value="all">Select Specialization...</option>
-    </select>
-
-    <!-- Reset Button -->
-    <button class="btn viewall-btn" onclick="resetFilters()">Reset Filters</button>
-</div>            
-
-            <div class="row" id="course-container">
-                <!-- Courses will be dynamically inserted here -->
+            <!-- Course Cards Container -->
+            <div class="row g-4" id="course-container">
+                <!-- Loading State -->
+                <div class="col-12 text-center" id="loading-state">
+                    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-3">Loading Courses...</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Re-usable Footer (Same as your homepage) -->
     <footer class="footer">
+        <!-- ... Paste your complete footer code here ... -->
         <div class="container">
-            <div class="row">
-                <!-- Left: Brand Name -->
-                <div class="col-lg-4 col-md-12 footer-brand">
-                    <h2>Chawrasia EdTech</h2>
-                </div>
-    
-                <!-- Middle: Social Media Icons -->
-                <div class="col-lg-4 col-md-12 footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="mailto:info@chawrasiaedtech.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        
-                </div>
-    
-                <!-- Right: Navigation Links (Two Columns) -->
-                <div class="col-lg-4 col-md-12 footer-links">
-                    <div class="footer-links-column">
-                        <a href="index.html">Home</a>
-                        <a href="courses.html">Courses</a>
-                        <!-- <a href="#">Faculty</a> -->
-                    </div>
-                    <div class="footer-links-column">
-                        <a href="about.html">About</a>
-                        <a href="contact.html">Contact</a>
-                        <!-- <a href="#">Privacy Policy</a> -->
+            <div class="row gy-4">
+                <!-- Column 1: Brand -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-brand">
+                        <h2>Chawrasia EdTech</h2>
+                        <p>Empowering minds through innovative, accessible, and practical education for a brighter future.</p>
+                        <div class="footer-social mt-3">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        </div>
                     </div>
                 </div>
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="about.html">About Us</a>
+                        <a href="courses.html">All Courses</a>
+                        <a href="index.html#faq">FAQs</a>
+                        <a href="join-team.html">Join Our Team</a>
+                    </div>
+                </div>
+                <!-- Column 3: Course Categories -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Popular Categories</h5>
+                    <div class="footer-links">
+                        <a href="courses.html">School & Board Prep</a>
+                        <a href="courses.html">University Level</a>
+                        <a href="courses.html">Skill Development</a>
+                        <a href="courses.html">Competitive Exams</a>
+                    </div>
+                </div>
+                 <!-- Column 4: Contact -->
+                <div class="col-lg-3 col-md-12">
+                     <h5>Contact Us</h5>
+                     <div class="footer-links">
+                        <a href="mailto:info@chawrasiaedtech.com"><i class="fas fa-envelope me-2"></i>info@chawrasiaedtech.com</a>
+                        <a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone me-2"></i>+91 XX-XXXX-XXXX</a>
+                        <a href="course-contact.html">Send a Message</a>
+                     </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Chawrasia EdTech. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
     
-
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <script src="courses.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">

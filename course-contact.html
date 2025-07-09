@@ -3,16 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Chawrasia Edtech</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Contact Us & Payment Info - Chawrasia EdTech</title>
+
+    <!-- External CSS - Bootstrap & Font Awesome for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- ALL NECESSARY CSS IS EMBEDDED BELOW FOR A GUARANTEED FIX -->
+    <style>
+        /* ===================================================================
+           1. GLOBAL VARIABLES & FONTS
+        ====================================================================== */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600;700&display=swap');
+
+        :root {
+            --primary-color: #5D3EBF;
+            --secondary-color: #1A237E;
+            --accent-color: #00BFA5;
+            --light-bg-color: #f8faff;
+            --white-color: #ffffff;
+            --text-color: #5f6c7b;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Lato', sans-serif;
+            --card-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
+        }
+
+        /* ===================================================================
+           2. FOOLPROOF PAGE LAYOUT STRUCTURE (THE FIX)
+        ====================================================================== */
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--body-font);
+            color: var(--text-color);
+            background-color: var(--light-bg-color); /* Page background */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .page-wrapper {
+            flex-grow: 1;
+        }
+
+        /* ===================================================================
+           3. NAVBAR & FOOTER STYLES (MATCHING HOMEPAGE PERFECTLY)
+        ====================================================================== */
+        .navbar { background-color: var(--white-color); padding: 10px 0; transition: all 0.3s ease; }
+        .navbar-logo { height: 50px; }
+        .navbar-brand { font-family: var(--heading-font); font-weight: 700; font-size: 1.5rem; color: var(--primary-color) !important; }
+        .nav-link { font-family: var(--heading-font); font-weight: 500; color: var(--secondary-color) !important; margin: 0 10px; transition: color 0.3s ease; }
+        .nav-link:hover, .nav-link.active, .contact-btn.active { color: var(--primary-color) !important; }
+        .contact-btn { background-color: var(--primary-color); color: var(--white-color) !important; padding: 10px 25px; border-radius: 50px; font-family: var(--heading-font); font-weight: 500; text-decoration: none; margin-left: 15px; transition: all 0.3s ease; }
+        .contact-btn.active { background-color: var(--secondary-color); color: var(--white-color) !important; } /* Active state for contact button */
+        .contact-btn:hover { background-color: var(--secondary-color); color: var(--white-color) !important; transform: translateY(-2px); }
+        .footer { background-color: var(--secondary-color); color: #e0e0e0; padding: 60px 0 20px 0; flex-shrink: 0; }
+        .footer-brand h2 { font-family: var(--heading-font); font-weight: 700; color: var(--white-color); font-size: 1.8rem; margin-bottom: 15px; }
+        .footer-brand p { font-size: 0.95rem; max-width: 300px; }
+        .footer h5 { font-family: var(--heading-font); font-weight: 600; color: var(--white-color); margin-bottom: 20px; }
+        .footer-links a { display: block; color: #e0e0e0; text-decoration: none; margin-bottom: 12px; transition: all 0.3s ease; }
+        .footer-links a:hover { color: var(--accent-color); padding-left: 5px; }
+        .footer-social .social-icon { color: #e0e0e0; font-size: 1.2rem; margin-right: 15px; transition: all 0.3s ease; }
+        .footer-social .social-icon:hover { color: var(--accent-color); transform: translateY(-3px); }
+        .footer-bottom { border-top: 1px solid #3c448a; padding-top: 20px; margin-top: 40px; font-size: 0.9rem; text-align: center; }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25D366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; }
+        .whatsapp-float i { margin-top: 15px; }
+
+        /* ===================================================================
+           4. CONTACT PAGE SPECIFIC STYLES
+        ====================================================================== */
+        .page-header { background-color: var(--white-color); padding: 40px 0; border-bottom: 1px solid #e8eaf6; }
+        .page-title { font-family: var(--heading-font); font-weight: 700; color: var(--secondary-color); font-size: 3rem; margin-bottom: 10px; }
+        .page-subtitle { font-size: 1.15rem; color: var(--text-color); max-width: 600px; margin: 0 auto; }
+        .section-padding { padding: 60px 0; }
+        .info-card { background-color: var(--white-color); padding: 40px; border-radius: 15px; box-shadow: var(--card-shadow); border: 1px solid #e8eaf6; }
+        .card-title-section { border-bottom: 1px solid #e8eaf6; padding-bottom: 20px; margin-bottom: 30px; }
+        .card-title-section h3 { font-family: var(--heading-font); font-weight: 600; color: var(--secondary-color); font-size: 1.8rem; margin-bottom: 0; }
+        .contact-method-item { display: flex; align-items: center; gap: 20px; padding: 15px; border-radius: 12px; text-decoration: none; margin-bottom: 15px; transition: all 0.3s ease; border: 1px solid #e8eaf6; }
+        .contact-method-item:hover { border-color: var(--primary-color); background-color: var(--light-bg-color); transform: translateY(-3px); }
+        .contact-method-icon { flex-shrink: 0; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--white-color); font-size: 1.4rem; }
+        .whatsapp-bg { background-color: #25D366; }
+        .email-bg { background-color: #EA4335; }
+        .phone-bg { background-color: var(--primary-color); }
+        .contact-method-text strong { display: block; font-family: var(--heading-font); font-size: 1.1rem; color: var(--secondary-color); }
+        .contact-method-text span { color: var(--text-color); font-size: 0.95rem; }
+        .payment-warning { background-color: #fffbe6; color: #725c00; padding: 15px; border-radius: 8px; border: 1px solid #ffe58f; margin-bottom: 25px; font-size: 0.95rem; }
+        .payment-details-list { list-style: none; padding: 0; margin: 0; }
+       
+.payment-details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* This is the new, more robust grid layout */
+.payment-details-list li {
+    display: grid; /* Use CSS Grid */
+    grid-template-columns: auto 1fr; /* Two columns: Label (auto width), Value (takes remaining space) */
+    gap: 10px; /* Space between label and value */
+    padding: 13px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    align-items: center; /* Vertically align label and value */
+}
+
+.payment-details-list li:last-child { 
+    border-bottom: none; 
+}
+
+/* Label Styling */
+.payment-details-list li .label {
+    color: var(--text-color);
+    text-align: left; /* Ensure label is left-aligned */
+}
+
+/* Value Styling */
+.payment-details-list li .value {
+    font-family: var(--body-font);
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-align: right; /* CRITICAL: Force value to the right */
+}
+
+/* Note Styling (for the IFSC code) */
+.payment-details-list li .note {
+    grid-column: 2 / 3; /* Make the note span only the second column */
+    text-align: right; /* Align it with the value above it */
+    color: #888;
+    font-size: 0.8rem;
+    margin-top: -5px;
+}
+
+.payment-details-list li:last-child { border-bottom: none; }
+        .payment-details-list li .label { color: var(--text-color); margin-right: 10px; }
+        .payment-details-list li .value { font-family: var(--body-font); font-weight: 700; color: var(--secondary-color); text-align: right; }
+        .payment-details-list li .note { flex-basis: 100%; text-align: right; color: #888; font-size: 0.8rem; margin-top: -5px; }
+        .qr-code-section { text-align: center; }
+        .qr-code-placeholder { width: 100%; max-width: 220px; aspect-ratio: 1 / 1; background-color: #f1f3f5; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #adb5bd; border: 2px dashed #ced4da; margin: 0 auto; }
+        .qr-code-placeholder i { font-size: 4rem; }
+        .qr-code-placeholder span { margin-top: 10px; font-size: 1rem; font-weight: 500; }
+    </style>
 </head>
 <body>
-    <!-- =================================================================== -->
-    <!-- Re-usable Navbar (Same as your index.html)                      -->
-    <!-- =================================================================== -->
-    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+
+    <!-- NAVBAR - IDENTICAL TO HOMEPAGE -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="images/logo.png" alt="Logo" class="navbar-logo">
@@ -24,77 +159,161 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#team">Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Testimonials</a></li>
                 </ul>
-                <a href="course-contact.html" class="btn contact-btn" style="background-color: #673AB7;">Contact</a>
+                <a href="course-contact.html" class="btn contact-btn active">Contact Us</a>
             </div>
         </div>
     </nav>
 
-    <!-- =================================================================== -->
-    <!-- Page Header                                                         -->
-    <!-- =================================================================== -->
-    <section class="contact-page-header">
-        <div class="container text-center">
-            <h1 class="page-title">Get in Touch</h1>
-            <p class="page-subtitle">We're excited to help you on your learning journey. Contact us directly!</p>
-        </div>
-    </section>
+    <!-- This 'page-wrapper' is the key to the layout fix -->
+    <div class="page-wrapper">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container text-center">
+                <h1 class="page-title">Get In Touch</h1>
+                <p class="page-subtitle">We're here to help you on your learning journey. Reach out with any questions or for enrollment support.</p>
+            </div>
+        </section>
 
-    <!-- =================================================================== -->
-    <!-- UPDATED Main Contact Section (No Form)                             -->
-    <!-- =================================================================== -->
-    <section class="contact-form-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <!-- A single, centered column for all content -->
-                <div class="col-lg-8">
+        <!-- Main Contact Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row gy-5 justify-content-center">
+                    
+                    <!-- Left Column: Direct Contact Methods -->
+                    <div class="col-lg-5 col-md-10">
+                        <div class="info-card">
+                            <div class="card-title-section">
+                                <h3>Contact Methods</h3>
+                            </div>
+                            
+                            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="contact-method-item">
+                                <div class="contact-method-icon whatsapp-bg"><i class="fab fa-whatsapp"></i></div>
+                                <div class="contact-method-text">
+                                    <strong>WhatsApp Chat</strong>
+                                    <span>Fastest way to get a response</span>
+                                </div>
+                            </a>
 
-                    <!-- Box 1: Direct Contact Methods -->
-                    <div class="contact-options-box mb-5">
-                        <h3 class="box-title text-center"><i class="fas fa-headset me-2"></i>Choose Your Preferred Way to Connect</h3>
-                        <p class="text-center mb-4">We are available via email, phone, or WhatsApp. Select the option that works best for you for any course-related questions.</p>
-                        <a href="mailto:info@chawrasiaedtech.com" class="contact-option-item">
-                           <i class="fas fa-envelope"></i>
-                           <span>Email: info@chawrasiaedtech.com</span>
-                        </a>
-                        <a href="tel:+91XXXXXXXXXX" class="contact-option-item">
-                           <i class="fas fa-phone"></i>
-                           <span>Phone: +91 XX-XXXX-XXXX</span>
-                        </a>
-                        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="contact-option-item">
-                           <i class="fab fa-whatsapp"></i>
-                           <span>WhatsApp: Click to Chat</span>
-                        </a>
-                   </div>
+                            <a href="mailto:info@chawrasiaedtech.com" class="contact-method-item">
+                                <div class="contact-method-icon email-bg"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-method-text">
+                                    <strong>Email Us</strong>
+                                    <span>info@chawrasiaedtech.com</span>
+                                </div>
+                            </a>
 
-                    <!-- Box 2: Official Payment Details -->
-                    <div class="payment-details-box">
-                        <h3 class="box-title"><i class="fas fa-shield-alt me-2"></i>Official Payment Information</h3>
-                        <p class="payment-warning">
-                            <strong>Important:</strong> To protect yourself from fraud, please only use the official account details listed below for course payments. We are not responsible for payments made to any other account.
-                        </p>
-                        <ul class="payment-list">
-                            <li><strong>Bank Name:</strong> YOUR BANK NAME</li>
-                            <li><strong>Account Holder:</strong> YOUR FULL NAME / COMPANY NAME</li>
-                            <li><strong>Account Number:</strong> XXXXXXXXXXXXXX</li>
-                            <li><strong>IFSC Code:</strong> ABCDE123456</li>
-                            <li><strong>UPI ID:</strong> your-upi-id@bank</li>
-                        </ul>
+                            <a href="tel:+91XXXXXXXXXX" class="contact-method-item">
+                                 <div class="contact-method-icon phone-bg"><i class="fas fa-phone"></i></div>
+                                 <div class="contact-method-text">
+                                    <strong>Call Us</strong>
+                                    <span>+91 XX-XXXX-XXXX</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Official Payment Details -->
+                    <div class="col-lg-7 col-md-10">
+                        <div class="info-card">
+                             <div class="card-title-section">
+                                <h3><i class="fas fa-shield-alt me-2 text-primary"></i>Official Payment Information</h3>
+                            </div>
+
+                            <div class="payment-warning">
+                                <strong>Important:</strong> To protect yourself from fraud, please only use the official account details listed below for course payments.
+                            </div>
+
+                            <div class="row g-4 align-items-center">
+                                <div class="col-md-7">
+                                    <ul class="payment-details-list">
+                                        <li><span class="label">Bank Name:</span> <span class="value">HDFC Bank</span></li>
+                                        <li><span class="label">Account Name:</span> <span class="value">CHAWRASIA ED TECH</span></li>
+                                        <li><span class="label">Account Number:</span> <span class="value">50200103177399</span></li>
+                                        <li>
+                                            <span class="label">IFSC Code:</span> <span class="value">HDFC0000345</span>
+                                            <small class="note">(5th-8th characters are Zero)</small>
+                                        </li>
+                                        <li><span class="label">Branch:</span> <span class="value">HAJIPUR, BIHAR</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 qr-code-section">
+                                    <div class="qr-code-placeholder">
+                                        <i class="fas fa-qrcode"></i>
+                                        <span>QR Code</span>
+                                    </div>
+                                    <p class="mt-2 mb-0"><strong>Scan to Pay</strong></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Re-usable Footer (Same as before) -->
+        </section>
+    </div> <!-- End of .page-wrapper -->
+    
+    <!-- FOOTER - IDENTICAL TO HOMEPAGE -->
     <footer class="footer">
-        <!-- ... (your footer code) ... -->
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-brand">
+                        <h2>Chawrasia EdTech</h2>
+                        <p>Empowering minds through innovative, accessible, and practical education for a brighter future.</p>
+                        <div class="footer-social mt-3">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="about.html">About Us</a>
+                        <a href="courses.html">All Courses</a>
+                        <a href="index.html#faq">FAQs</a>
+                        <a href="join-team.html">Join Our Team</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Popular Categories</h5>
+                    <div class="footer-links">
+                        <a href="courses.html">School & Board Prep</a>
+                        <a href="courses.html">University Level</a>
+                        <a href="courses.html">Skill Development</a>
+                        <a href="courses.html">Competitive Exams</a>
+                    </div>
+                </div>
+                 <div class="col-lg-3 col-md-12">
+                     <h5>Contact Us</h5>
+                     <div class="footer-links">
+                        <a href="mailto:info@chawrasiaedtech.com"><i class="fas fa-envelope me-2"></i>info@chawrasiaedtech.com</a>
+                        <a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone me-2"></i>+91 XX-XXXX-XXXX</a>
+                        <a href="course-contact.html">Send a Message</a>
+                     </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Chawrasia EdTech. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
 </body>
 </html>
