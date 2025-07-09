@@ -26,7 +26,7 @@
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
                 </ul>
-                <a href="contact.html" class="btn contact-btn">Contact</a>
+                <a href="course-contact.html" class="btn contact-btn">Contact</a>
             </div>
         </div>
     </nav>
@@ -51,77 +51,106 @@
     
     <!-- In index.html, replace the entire "courses-section" with this -->
 
-<section class="courses-section">
+<!-- =================================================================== -->
+<!-- UPDATED: Courses Overview Section (with Clickable Cards)            -->
+<!-- =================================================================== -->
+<section class="courses-overview">
     <div class="container">
-        <h2 class="section-title">Explore Our Courses</h2>
-        <!-- Use Bootstrap's row-gap for consistent spacing on all screen sizes -->
-        <div class="row row-gap-4"> 
-            <!-- Course 1 (Simplified) -->
-            <div class="col-md-6 col-lg-3">
-                <div class="course-card">
-                    <!-- Text content is now a direct child -->
-                    <div>
-                        <h3 class="course-title">EV Powertrain & Battery Systems</h3>
-                        <p><strong>Duration:</strong> 6 Weeks</p>
-                        <p><strong>Mode:</strong> Online</p>
-                        <p class="course-desc">Learn about motors, batteries, and powertrains in modern EVs.</p>
+        <!-- Section Title and Subtitle -->
+        <div class="text-center mb-5">
+            <h2 class="section-title">A Course for Every Ambition</h2>
+            <p class="section-subtitle-custom">From foundational learning to professional mastery, we have a path for you.</p>
+        </div>
+
+        <!-- Category Cards Row -->
+        <div class="row justify-content-center row-gap-4">
+
+            <!-- Category 1: School Courses (NOW CLICKABLE) -->
+            <div class="col-lg-3 col-md-6">
+                <!-- The entire card is wrapped in this <a> tag -->
+                <a href="courses.html" class="category-card-link">
+                    <div class="category-card h-100">
+                        <div class="category-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h3 class="category-title">School Students</h3>
+                        <p class="category-description">
+                            Building strong foundations in core subjects with engaging lessons to help you excel in exams.
+                        </p>
+                        <ul class="category-list">
+                            <li><i class="fas fa-check-circle"></i> Mathematics (VI-XII)</li>
+                            <li><i class="fas fa-check-circle"></i> Physics & Chemistry</li>
+                            <li><i class="fas fa-check-circle"></i> Board Exam Prep</li>
+                        </ul>
                     </div>
-                    <!-- Button container with mt-auto -->
-                    <div class="mt-auto pt-3">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSchJEW6cWG2wuzBeDR7dHL8DxGZ7XRB6qAl15uMGH9FThqPnA/viewform?usp=header" class="btn btn-primary w-100">Know More</a>
+                </a>
+            </div>
+
+            <!-- Category 2: College & University (NOW CLICKABLE) -->
+            <div class="col-lg-3 col-md-6">
+                <a href="courses.html" class="category-card-link">
+                    <div class="category-card h-100">
+                        <div class="category-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="category-title">University Scholars</h3>
+                        <p class="category-description">
+                            Deepen your understanding of complex engineering and technical topics with expert-led courses.
+                        </p>
+                        <ul class="category-list">
+                            <li><i class="fas fa-check-circle"></i> Power Systems</li>
+                            <li><i class="fas fa-check-circle"></i> EV Engineering</li>
+                            <li><i class="fas fa-check-circle"></i> Advanced AI Concepts</li>
+                        </ul>
                     </div>
-                </div>
+                </a>
             </div>
             
-            <!-- Course 2 (Simplified) -->
-            <div class="col-md-6 col-lg-3">
-                <div class="course-card">
-                    <div>
-                        <h3 class="course-title">EV Charging Infrastructure</h3>
-                        <p><strong>Duration:</strong> 5 Weeks</p>
-                        <p><strong>Mode:</strong> Online</p>
-                        <p class="course-desc">Understand fast charging, grid integration, and power electronics.</p>
+            <!-- Category 3: Skill-Based Courses (NOW CLICKABLE) -->
+            <div class="col-lg-3 col-md-6">
+                <a href="courses.html" class="category-card-link">
+                    <div class="category-card h-100">
+                        <div class="category-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="category-title">Skill Seekers</h3>
+                        <p class="category-description">
+                            Gain practical, in-demand skills for the modern workplace, designed for real-world application.
+                        </p>
+                        <ul class="category-list">
+                            <li><i class="fas fa-check-circle"></i> EV Charging Tech</li>
+                            <li><i class="fas fa-check-circle"></i> AI & IoT Applications</li>
+                            <li><i class="fas fa-check-circle"></i> Professional Development</li>
+                        </ul>
                     </div>
-                    <div class="mt-auto pt-3">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSchJEW6cWG2wuzBeDR7dHL8DxGZ7XRB6qAl15uMGH9FThqPnA/viewform?usp=header" class="btn btn-primary w-100">Know More</a>
-                    </div>
-                </div>
+                </a>
             </div>
 
-            <!-- Course 3 (Simplified) -->
-            <div class="col-md-6 col-lg-3">
-                <div class="course-card">
-                    <div>
-                        <h3 class="course-title">AI & IoT in Smart EVs</h3>
-                        <p><strong>Duration:</strong> 8 Weeks</p>
-                        <p><strong>Mode:</strong> Online</p>
-                        <p class="course-desc">Explore AI, IoT sensors, and connected vehicles.</p>
+            <!-- Category 4: Competitive Exams (NOW CLICKABLE) -->
+            <div class="col-lg-3 col-md-6">
+                <a href="courses.html" class="category-card-link">
+                    <div class="category-card h-100">
+                        <div class="category-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h3 class="category-title">Competitive Exams</h3>
+                        <p class="category-description">
+                            Strategic preparation and comprehensive content to help you crack entrance and government exams.
+                        </p>
+                        <ul class="category-list">
+                            <li><i class="fas fa-check-circle"></i> Engineering Entrance</li>
+                            <li><i class="fas fa-check-circle"></i> Aptitude & Reasoning</li>
+                            <li><i class="fas fa-check-circle"></i> Specialized Tests</li>
+                        </ul>
                     </div>
-                    <div class="mt-auto pt-3">
-                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSchJEW6cWG2wuzBeDR7dHL8DxGZ7XRB6qAl15uMGH9FThqPnA/viewform?usp=header" class="btn btn-primary w-100">Know More</a>
-                    </div>
-                </div>
+                </a>
             </div>
 
-            <!-- Course 4 (Simplified) -->
-            <div class="col-md-6 col-lg-3">
-                <div class="course-card">
-                    <div>
-                       <h3 class="course-title">Power System Analysis</h3>
-                       <p><strong>Duration:</strong> 6 Weeks</p>
-                       <p><strong>Mode:</strong> Online</p>
-                       <p class="course-desc">Study power flow, fault analysis, and smart grids.</p>
-                    </div>
-                    <div class="mt-auto pt-3">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSchJEW6cWG2wuzBeDR7dHL8DxGZ7XRB6qAl15uMGH9FThqPnA/viewform?usp=header" class="btn btn-primary w-100">Know More</a>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- View All Button -->
-        <div class="text-center mt-4">
-            <a href="courses.html" class="btn viewall-btn">View All Courses</a>
+        <div class="text-center mt-5">
+            <a href="courses.html" class="btn viewall-btn">Explore All Our Courses</a>
         </div>
     </div>
 </section>
@@ -197,7 +226,8 @@
             </div>
             <!-- "Join Our Team" Button Added Here -->
             <div class="text-center mt-4">
-                <a href="YOUR_RECRUITMENT_GOOGLE_FORM_LINK_HERE" class="btn btn-primary">Join Our Team</a>
+                <!-- In the Team Section -->
+                <a href="join-team.html" class="btn btn-primary">Join Our Team</a>
             </div>
         </div>
     </section>
@@ -228,7 +258,7 @@
                     </div>
                     <div class="footer-links-column">
                         <a href="about.html">About</a>
-                        <a href="contact.html">Contact</a>
+                        <a href="course-contact.html" class="btn contact-btn">Contact</a>
                     </div>
                 </div>
             </div>

@@ -683,3 +683,244 @@
     transform: scale(1.1);
     color: white; /* Keep icon color white on hover */
 }
+
+/* =================================
+   NEW Courses Overview Section
+==================================== */
+.courses-overview {
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Using your existing light background */
+}
+
+/* Custom subtitle for this section to avoid conflicts */
+.section-subtitle-custom {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ====================================================
+   FIX: Equal Height Course Category Cards
+======================================================= */
+
+/* 1. Ensure the card is a flex container and fills its column */
+.category-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* --- KEY ADDITIONS --- */
+    display: flex;          /* Make the card a flex container */
+    flex-direction: column; /* Arrange items vertically (icon, title, desc, list) */
+    height: 100%;           /* Make the card take up the full height of its parent column */
+}
+
+/* 2. Make the description area grow to fill empty space */
+.category-description {
+    font-size: 0.95rem; 
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+
+    /* --- THIS IS THE MAGIC --- */
+    flex-grow: 1;  /* This tells the description to expand and take up all available vertical space, pushing the list down. */
+}
+
+/* --- You can leave the rest of your .category-card related CSS as is --- */
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(103, 58, 183, 0.12);
+}
+
+.category-icon {
+    font-size: 2.8rem;
+    color: #673AB7; 
+    margin-bottom: 20px;
+}
+
+.category-card .category-title {
+    font-size: 1.35rem; 
+    font-weight: bold;
+    color: #1E2A78;
+    margin-bottom: 15px;
+}
+
+.category-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    align-self: flex-start; 
+    width: 100%;
+}
+
+.category-list li {
+    color: #444;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.category-list li:last-child {
+    margin-bottom: 0;
+}
+
+.category-list li .fas.fa-check-circle {
+    color: #28a745; 
+    margin-right: 10px;
+}
+
+.category-card-link {
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
+    /* This new addition ensures the link fills the column properly */
+    height: 100%;
+}
+
+.category-card-link:hover .category-card {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(103, 58, 183, 0.12);
+}
+
+/* ===================================================================
+   CONTACT PAGES STYLING (For course-contact.html & join-team.html)
+====================================================================== */
+
+/* --- Page Header --- */
+.contact-page-header {
+    background-color: #f8f9fa; /* Light background to separate from navbar */
+    padding: 40px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1E2A78; /* Dark Blue */
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 1.15rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Main Section Containing Form & Info --- */
+.contact-form-section {
+    padding: 60px 0;
+}
+
+.form-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #673AB7; /* Violet */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* --- Shared Box Styling (Right Column) --- */
+.payment-details-box,
+.contact-options-box,
+.why-join-box {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.box-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #1E2A78;
+    margin-bottom: 15px;
+}
+
+/* --- Official Payment Details Box --- */
+.payment-warning {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.6;
+    border-left: 4px solid #FF9800; /* Orange accent */
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.payment-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.payment-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.payment-list li:last-child {
+    border-bottom: none;
+}
+
+/* --- Other Contact Options Box --- */
+.contact-option-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-option-item:hover {
+    background-color: #e9e5f3; /* Light violet hover */
+    color: #1E2A78;
+}
+
+.contact-option-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-option-item i {
+    font-size: 1.5rem;
+    color: #673AB7;
+    margin-right: 15px;
+    width: 30px; /* Aligns text neatly */
+    text-align: center;
+}
+
+.contact-option-item span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* --- Why Join Us Box (For join-team.html) --- */
+.why-join-list {
+    list-style: none;
+    padding: 0;
+}
+
+.why-join-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.why-join-list i {
+    color: #28a745; /* Success Green */
+    margin-right: 10px;
+}
